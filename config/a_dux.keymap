@@ -7,6 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#define DEFAULT 0
+#define RIGHT 1
 
 / {
 
@@ -19,9 +21,18 @@
 				&kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &reset
 				&kp A     &kp S     &kp D     &kp F     &kp G     &kp H     &kp J     &kp K     &kp L     &bt BT_CLR
 				&kp Z     &kp X     &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &bt BT_NXT
-				                              &bt BT_CLR   &bt BT_NXT  &kp SPACE &kp ENTER
+				                              &kp N1   &lt LEFT SPACE   &kp SPACE &kp ENTER
+			>;
+		};	
+		base_layer2 {
+			bindings = <
+				&RESET    &kp W     &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &reset
+				&bt BT_CLR     &kp S     &kp D     &kp F     &kp G     &kp H     &kp J     &kp K     &kp L     &bt BT_CLR
+				&bt BT_NXT     &kp X     &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &bt BT_NXT
+				                              &bt trans   &trans  &kp SPACE &kp ENTER
 			>;
 		};
+
 
 	};
 };

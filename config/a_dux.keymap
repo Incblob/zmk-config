@@ -94,7 +94,7 @@
 		both_layer {
 			bindings = <
 				&trans				&trans    	 &kp K_BACK     	&kp K_FORWARD 	&bt BT_CLR		&trans	  &kp LS(HOME) 		&trans	&kp LS(END)			&mt LC(G) LC(F)
-				&kb LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&bt BT_NXT		&trans	  &kp LS(LC(LEFT))	&trans	&kp LS(LC(RIGHT))	&trans
+				&kp LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&bt BT_NXT		&trans	  &kp LS(LC(LEFT))	&trans	&kp LS(LC(RIGHT))	&trans
 				&kp LC(BACKSPACE)	&trans		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&reset			&trans	  &trans	 		&trans	&trans				&trans
 				                									&trans   		&kp BSPC		&kp ENTER 		&trans
 			>;

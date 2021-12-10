@@ -4,23 +4,99 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define DEFAULT 0
+#define RIGHT 2
+#define LEFT 1
+#define BOTH 3
+
+#define MODTIME 23
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-/ {
+&mt {
+    tapping-term-ms = <150>;
+    retro-tap;
+};
 
+/ {
+	combos {
+        compatible = "zmk,combos";
+        combo_enter {
+            timeout-ms = <MODTIME>;
+            key-positions = <27 28>;
+            bindings = <&mt LS(ENTER) ENTER>;
+        };
+		combo_tab {
+            timeout-ms = <MODTIME>;
+            key-positions = <11 12>;
+            bindings = <&mt LS(TAB) TAB>;
+        };
+      	combo_ctl_bsp {
+            timeout-ms = <MODTIME>;
+            key-positions = <26 17>;
+            bindings = <&kp LC(BSPC) >;
+        };
+        combo_end {
+            timeout-ms = <MODTIME>;
+            key-positions = <17 18>;
+            bindings = <&kp END>;
+        };
+        combo_home {
+            timeout-ms = <MODTIME>;
+            key-positions = <16 17>;
+            bindings = <&kp HOME>;
+        };
+        combo_super_home {
+            timeout-ms = <MODTIME>;
+            key-positions = <7 17>;
+            bindings = <&kp LC(HOME) >;
+        };
+        combo_super_end {
+            timeout-ms = <MODTIME>;
+            key-positions = <17 27>;
+            bindings = <&kp LC(HOME) >;
+        };
+    };
 	keymap {
 		compatible = "zmk,keymap";
 
 		// This is a sample keymap intended to be replaced with your own
 		base_layer {
 			bindings = <
-				&kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &kp P
-				&kp A     &kp S     &kp D     &kp F     &kp G     &kp H     &kp J     &kp K     &kp L     &kp SEMI
-				&kp Z     &kp X     &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH
-				                              &kp TAB   &kp BSPC  &kp SPACE &kp ENTER
+				&mt LS(Q) Q     &mt LS(W) W     &mt LS(F) F     &mt LS(P) P    	&mt LS(B) B     	&mt LS(J) J     	&mt LS(L) L     &mt LS(U) U    &mt LS(Y) Y     &mt LC(G) LC(F)
+				&mt LS(A) A     &mt LS(R) R     &mt LS(S) S     &mt LS(T) T    	&mt LS(G) G     	&mt LS(M) M     	&mt LS(N) N     &mt LS(E) E    &mt LS(I) I     &mt LS(NON_US_HASH) NON_US_HASH 
+				&mt LS(Z) Z     &mt LS(X) X     &mt LS(C) C     &mt LS(D) D    	&mt LS(V) V     	&mt LS(K) K     	&mt LS(H) H     &mt LS(COMMA) COMMA   &mt LS(DOT) DOT    &mt LS(O) O
+																&lt LEFT SPACE  &kp BSPC  			&mt LS(FSLH) FSLH 	&lt RIGHT SPACE
+			>;
+		};
+ 
+		left_layer {
+			bindings = <
+				&kp SQT     	&kp MINUS     	&kp SEMI     	&kp LBRC    &kp RBKT     	&kp LS(N3)		&kp GRAVE 	    &kp UP     &kp LS(MINUS)    &kp EQUAL
+				&kp LSHIFT		&kp LS(N1)     	&kp RA(Q)  		&kp LS(N6)  &kp LS(N5)  	&kp M     		&kp LEFT  		&kp DOWN   	&kp RIGHT     	&kp LS(RBKT)
+				&kp LCTRL     	&kp X     		&kp C     		&kp LC(B)   &kp V    		&kp K     		&kp LS(N4)  	&kp RA(E)  	&kp LS(N3)  	 &kp TAB
+				                              					&trans   	&kp BSPC  		&mt LS(ENTER) ENTER 		&lt BOTH K_APP
 			>;
 		};
 
+
+		right_layer {
+			bindings = <
+				&kp NON_US_BSLH   	&mt S(N2) S(NON_US_HASH)	&kp RA(N8)    	&kp RA(N9)     			&kp B     		&kp KP_STAR      &kp N7     &kp N8     &kp N9     	&kp KP_MINUS
+				&kp RA(NON_US_BSLH) &kp S(NON_US_BSLH)     		&kp LS(N8)    	&kp LS(N9)     			&kp LS(N0)  	&kp KP_SLASH     &kp N4     &kp N5     &kp N6     	&kp KP_PLUS
+				&kp Z     			&kp X     			&mt NON_US_BSLH LS(N7) 	&mt RA(N0) RA(MINUS)	&kp V   		&kp N0 		  	&kp N1     	&kp N2 		&kp N3   	&mt KP_COMMA KP_DOT
+				                            								&lt BOTH space_out_macro  	&kp BSPC	 	&kp ENTER  	&kp ENTER &trans
+			>;
+		};
+
+		both_layer {
+			bindings = <
+				&trans				&trans    	 &kp K_BACK     	&kp K_FORWARD 	&bt BT_CLR		&trans	  &kp LS(HOME) 		&trans	&kp LS(END)		&mt LC(G) LC(F)
+				&kb LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&bt BT_NXT		&trans	  &kp LS(LC(LEFT))	&trans	&kp LS(LC(RIGHT))	&trans
+				&kp LC(BACKSPACE)	&trans		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&reset			&trans	  &trans	 		&trans	&trans				&trans
+				                								&trans   		&kp BSPC	&kp ENTER 		&trans
+			>;
+		};
 	};
 };

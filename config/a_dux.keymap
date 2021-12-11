@@ -85,7 +85,7 @@
     };
 
 	keymap {
-		compatible = "zmk,keymap";x
+		compatible = "zmk,keymap";
 
 		base_layer {
 			bindings = <

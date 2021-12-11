@@ -92,7 +92,7 @@
 				&as LS(Q) Q     &as LS(W) W     &as LS(F) F     &as LS(P) P    	&as LS(B) B     	&as LS(J) J     	&as LS(L) L     &as LS(U) U    &as LS(Z) Z     			&as LS(NON_US_HASH) NON_US_HASH 
 				&as LS(A) A     &as LS(R) R     &as LS(S) S     &as LS(T) T    	&as LS(G) G     	&as LS(M) M     	&as LS(N) N     &as LS(E) E    &as LS(I) I     			&as LS(O) O
 				&as LS(Y) Y     &as LS(X) X     &as LS(C) C     &as LS(D) D    	&as LS(V) V     	&as LS(K) K     	&as LS(H) H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &mt LC(G) LC(F)
-																&lt LEFT SPACE  &mt LCTRL BSPC  	&as LS(FSLH) FSLH 	&mo 2
+																&lt 1 SPACE  &mt LCTRL BSPC  	&as LS(FSLH) FSLH 	&lt 2 SPACE
 			>;
 		};
  
@@ -101,7 +101,7 @@
 				&kp SQT     	&kp MINUS     	&kp SEMI     	&kp LBRC    &kp RBKT     	&kp LS(N3)		&kp GRAVE 	    &kp UP     &kp LS(MINUS)    &kp EQUAL
 				&kp LSHIFT		&kp LS(N1)     	&kp RA(Q)  		&kp LS(N6)  &kp LS(N5)  	&kp M     		&kp LEFT  		&kp DOWN   	&kp RIGHT     	&kp LS(RBKT)
 				&kp LCTRL     	&kp X     		&kp C     		&kp LC(B)   &kp V    		&kp K     		&kp LS(N4)  	&kp RA(E)  	&kp LS(N3)  	 &kp TAB
-				                              					&lt LEFT SPACE   	&kp LC(BSPC)  		&as LS(ENTER) ENTER 		&lt BOTH K_APP
+				                              					&lt 1 SPACE   	&kp LC(BSPC)  		&as LS(ENTER) ENTER 		&lt 3 K_APP
 			>;
 		};
 
@@ -111,7 +111,7 @@
 				&kp NON_US_BSLH   	&as LS(N2) LS(NON_US_HASH)	&kp RA(N8)    	&kp RA(N9)     			&kp B     		&kp KP_ASTERISK      &kp N7     &kp N8     &kp N9     	&kp KP_MINUS
 				&kp RA(NON_US_BSLH) &kp LS(NON_US_BSLH)     	&kp LS(N8)    &kp LS(N9)     			&kp LS(N0)  	&kp KP_SLASH     &kp N4     &kp N5     &kp N6     	&kp KP_PLUS
 				&trans     			&trans     			&as NON_US_BSLH LS(N7) 	&as RA(N0) RA(MINUS)	&kp V   		&kp N0 		  	&kp N1     	&kp N2 		&kp N3   	&as KP_COMMA KP_DOT
-				                            									&mo BOTH    			&kp LC(BSPC)	 &kp ENTER   &mo 2
+				                            									&mo 3    			&kp LC(BSPC)	 &kp ENTER   &mo 2
 			>;
 		}; 
 
@@ -120,7 +120,7 @@
 				&kp ESC				&trans    	 &kp K_BACK     	&kp K_FORWARD 	&trans		&reset	  		&kp LS(HOME) 		&trans	&kp LS(END)			&mt LC(G) LC(F)
 				&kp LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&trans		&bt BT_CLR	  	&kp LS(LC(LEFT))	&trans	&kp LS(LC(RIGHT))	&trans
 				&kp DELETE			&trans		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&trans	 			&trans	&trans				&trans
-				                									&mo BOTH   		&kp BSPC		&kp ENTER 		&mo BOTH
+				                									&mo 3   		&kp BSPC		&kp ENTER 		&mo 3
 			>;
 		};
 	};

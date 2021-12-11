@@ -9,7 +9,7 @@
 #define LEFT 1
 #define BOTH 3
 
-#define MODTIME 25
+#define MODTIME 28
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -77,7 +77,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <155>;
             quick_tap_ms = <100>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -91,9 +91,9 @@
 		base_layer {
 			bindings = <
 				&as LS(Q) Q     &as LS(W) W     &as LS(F) F     &as LS(P) P    	&as LS(B) B     	&as LS(J) J     	&as LS(L) L     &as LS(U) U    &as LS(Z) Z     &mt LC(G) LC(F)
-				&as LS(A) A     &as LS(R) R     &as LS(S) S     &as LS(T) T    	&as LS(G) G     	&as LS(M) M     	&as LS(N) N     &as LS(E) E    &as LS(I) I     &as LS(NON_US_HASH) NON_US_HASH 
-				&as LS(Y) Y     &as LS(X) X     &as LS(C) C     &as LS(D) D    	&as LS(V) V     	&as LS(K) K     	&as LS(H) H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &as LS(O) O
-																&lt LEFT SPACE  &mt LCTRL BSPC  			&as LS(FSLH) FSLH 	&lt RIGHT SPACE
+				&as LS(A) A     &as LS(R) R     &as LS(S) S     &as LS(T) T    	&as LS(G) G     	&as LS(M) M     	&as LS(N) N     &as LS(E) E    &as LS(I) I     &as LS(O) OL
+				&as LS(Y) Y     &as LS(X) X     &as LS(C) C     &as LS(D) D    	&as LS(V) V     	&as LS(K) K     	&as LS(H) H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &as S(NON_US_HASH) NON_US_HASH 
+																&lt LEFT SPACE  &as LCTRL BSPC  	&as LS(FSLH) FSLH 	&mo RIGHT
 			>;
 		};
  

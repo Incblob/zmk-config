@@ -73,12 +73,12 @@
     };
 
     behaviors {
-        hm: homerow_mods {
+        as: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            quick_tap_ms = <50>;
+            quick_tap_ms = <100>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -90,10 +90,10 @@
 		// This is a sample keymap intended to be replaced with your own
 		base_layer {
 			bindings = <
-				&mt LS(Q) Q     &mt LS(W) W     &mt LS(F) F     &mt LS(P) P    	&mt LS(B) B     	&mt LS(J) J     	&mt LS(L) L     &mt LS(U) U    &mt LS(Z) Z     &mt LC(G) LC(F)
-				&mt LS(A) A     &mt LS(R) R     &mt LS(S) S     &mt LS(T) T    	&mt LS(G) G     	&mt LS(M) M     	&mt LS(N) N     &mt LS(E) E    &mt LS(I) I     &mt LS(NON_US_HASH) NON_US_HASH 
-				&mt LS(Y) Y     &mt LS(X) X     &mt LS(C) C     &mt LS(D) D    	&mt LS(V) V     	&mt LS(K) K     	&mt LS(H) H     &mt LS(COMMA) COMMA   &mt LS(DOT) DOT    &mt LS(O) O
-																&lt LEFT SPACE  &mt LCTRL BSPC  			&mt LS(FSLH) FSLH 	&lt RIGHT SPACE
+				&as LS(Q) Q     &as LS(W) W     &as LS(F) F     &as LS(P) P    	&as LS(B) B     	&as LS(J) J     	&as LS(L) L     &as LS(U) U    &as LS(Z) Z     &mt LC(G) LC(F)
+				&as LS(A) A     &as LS(R) R     &as LS(S) S     &as LS(T) T    	&as LS(G) G     	&as LS(M) M     	&as LS(N) N     &as LS(E) E    &as LS(I) I     &as LS(NON_US_HASH) NON_US_HASH 
+				&as LS(Y) Y     &as LS(X) X     &as LS(C) C     &as LS(D) D    	&as LS(V) V     	&as LS(K) K     	&as LS(H) H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &as LS(O) O
+																&lt LEFT SPACE  &mt LCTRL BSPC  			&as LS(FSLH) FSLH 	&lt RIGHT SPACE
 			>;
 		};
  
@@ -102,16 +102,16 @@
 				&kp SQT     	&kp MINUS     	&kp SEMI     	&kp LBRC    &kp RBKT     	&kp LS(N3)		&kp GRAVE 	    &kp UP     &kp LS(MINUS)    &kp EQUAL
 				&kp LSHIFT		&kp LS(N1)     	&kp RA(Q)  		&kp LS(N6)  &kp LS(N5)  	&kp M     		&kp LEFT  		&kp DOWN   	&kp RIGHT     	&kp LS(RBKT)
 				&kp LCTRL     	&kp X     		&kp C     		&kp LC(B)   &kp V    		&kp K     		&kp LS(N4)  	&kp RA(E)  	&kp LS(N3)  	 &kp TAB
-				                              					&lt LEFT SPACE   	&kp LC(BSPC)  		&mt LS(ENTER) ENTER 		&lt BOTH K_APP
+				                              					&lt LEFT SPACE   	&kp LC(BSPC)  		&as LS(ENTER) ENTER 		&lt BOTH K_APP
 			>;
 		};
 
 
 		right_layer {
 			bindings = <
-				&kp NON_US_BSLH   	&mt LS(N2) LS(NON_US_HASH)	&kp RA(N8)    	&kp RA(N9)     			&kp B     		&kp KP_ASTERISK      &kp N7     &kp N8     &kp N9     	&kp KP_MINUS
+				&kp NON_US_BSLH   	&as LS(N2) LS(NON_US_HASH)	&kp RA(N8)    	&kp RA(N9)     			&kp B     		&kp KP_ASTERISK      &kp N7     &kp N8     &kp N9     	&kp KP_MINUS
 				&kp RA(NON_US_BSLH) &kp LS(NON_US_BSLH)     	&kp LS(N8)    &kp LS(N9)     			&kp LS(N0)  	&kp KP_SLASH     &kp N4     &kp N5     &kp N6     	&kp KP_PLUS
-				&trans     			&trans     			&mt NON_US_BSLH LS(N7) 	&mt RA(N0) RA(MINUS)	&kp V   		&kp N0 		  	&kp N1     	&kp N2 		&kp N3   	&mt KP_COMMA KP_DOT
+				&trans     			&trans     			&as NON_US_BSLH LS(N7) 	&as RA(N0) RA(MINUS)	&kp V   		&kp N0 		  	&kp N1     	&kp N2 		&kp N3   	&as KP_COMMA KP_DOT
 				                            									&mo BOTH    			&kp LC(BSPC)	 &kp ENTER   &lt RIGHT SPACE
 			>;
 		}; 

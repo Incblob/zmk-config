@@ -9,7 +9,7 @@
 #define LEFT 1
 #define BOTH 3
 
-#define MODTIME 23
+#define MODTIME 25
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -17,7 +17,7 @@
 
 &mt {
     tapping-term-ms = <150>;
-    retro-tap;
+    quick_tap_ms = <150>;
 };
 
 / {
@@ -35,7 +35,7 @@
         };
       	combo_ctl_bsp {
             timeout-ms = <MODTIME>;
-            key-positions = <26 17>;
+            key-positions = <26 27>;
             bindings = <&kp LC(BSPC) >;
         };
         combo_end {
@@ -56,7 +56,17 @@
         combo_super_end {
             timeout-ms = <MODTIME>;
             key-positions = <17 27>;
-            bindings = <&kp LC(HOME) >;
+            bindings = <&kp LC(END) >;
+        };
+        combo_next_word {
+            timeout-ms = <MODTIME>;
+            key-positions = <18 19>;
+            bindings = <&kp LC(RIGHT) >;
+        };
+        combo_prev_word {
+            timeout-ms = <MODTIME>;
+            key-positions = <15 16>;
+            bindings = <&kp LC(END) >;
         };
     };
 	keymap {
@@ -65,10 +75,10 @@
 		// This is a sample keymap intended to be replaced with your own
 		base_layer {
 			bindings = <
-				&mt LS(Q) Q     &mt LS(W) W     &mt LS(F) F     &mt LS(P) P    	&mt LS(B) B     	&mt LS(J) J     	&mt LS(L) L     &mt LS(U) U    &mt LS(Y) Y     &mt LC(G) LC(F)
+				&mt LS(Q) Q     &mt LS(W) W     &mt LS(F) F     &mt LS(P) P    	&mt LS(B) B     	&mt LS(J) J     	&mt LS(L) L     &mt LS(U) U    &mt LS(Z) Z     &mt LC(G) LC(F)
 				&mt LS(A) A     &mt LS(R) R     &mt LS(S) S     &mt LS(T) T    	&mt LS(G) G     	&mt LS(M) M     	&mt LS(N) N     &mt LS(E) E    &mt LS(I) I     &mt LS(NON_US_HASH) NON_US_HASH 
-				&mt LS(Z) Z     &mt LS(X) X     &mt LS(C) C     &mt LS(D) D    	&mt LS(V) V     	&mt LS(K) K     	&mt LS(H) H     &mt LS(COMMA) COMMA   &mt LS(DOT) DOT    &mt LS(O) O
-																&lt LEFT SPACE  &kp BSPC  			&mt LS(FSLH) FSLH 	&lt RIGHT SPACE
+				&mt LS(Y) Y     &mt LS(X) X     &mt LS(C) C     &mt LS(D) D    	&mt LS(V) V     	&mt LS(K) K     	&mt LS(H) H     &mt LS(COMMA) COMMA   &mt LS(DOT) DOT    &mt LS(O) O
+																&lt LEFT SPACE  &mt LCTRL BSPC  			&mt LS(FSLH) FSLH 	&lt RIGHT SPACE
 			>;
 		};
  
@@ -77,7 +87,7 @@
 				&kp SQT     	&kp MINUS     	&kp SEMI     	&kp LBRC    &kp RBKT     	&kp LS(N3)		&kp GRAVE 	    &kp UP     &kp LS(MINUS)    &kp EQUAL
 				&kp LSHIFT		&kp LS(N1)     	&kp RA(Q)  		&kp LS(N6)  &kp LS(N5)  	&kp M     		&kp LEFT  		&kp DOWN   	&kp RIGHT     	&kp LS(RBKT)
 				&kp LCTRL     	&kp X     		&kp C     		&kp LC(B)   &kp V    		&kp K     		&kp LS(N4)  	&kp RA(E)  	&kp LS(N3)  	 &kp TAB
-				                              					&trans   	&kp BSPC  		&mt LS(ENTER) ENTER 		&lt BOTH K_APP
+				                              					&lt LEFT SPACE   	&kp LC(BSPC)  		&mt LS(ENTER) ENTER 		&lt BOTH K_APP
 			>;
 		};
 
@@ -87,16 +97,16 @@
 				&kp NON_US_BSLH   	&mt LS(N2) LS(NON_US_HASH)	&kp RA(N8)    	&kp RA(N9)     			&kp B     		&kp KP_ASTERISK      &kp N7     &kp N8     &kp N9     	&kp KP_MINUS
 				&kp RA(NON_US_BSLH) &kp LS(NON_US_BSLH)     	&kp LS(N8)    &kp LS(N9)     			&kp LS(N0)  	&kp KP_SLASH     &kp N4     &kp N5     &kp N6     	&kp KP_PLUS
 				&trans     			&trans     			&mt NON_US_BSLH LS(N7) 	&mt RA(N0) RA(MINUS)	&kp V   		&kp N0 		  	&kp N1     	&kp N2 		&kp N3   	&mt KP_COMMA KP_DOT
-				                            								&mo BOTH    	&kp BSPC	 	&kp ENTER  	&kp ENTER &trans
+				                            									&mo BOTH    			&kp LC(BSPC)	 &kp ENTER   &lt RIGHT SPACE
 			>;
 		}; 
 
 		both_layer {
 			bindings = <
-				&trans				&trans    	 &kp K_BACK     	&kp K_FORWARD 	&bt BT_CLR		&trans	  &kp LS(HOME) 		&trans	&kp LS(END)			&mt LC(G) LC(F)
-				&kp LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&bt BT_NXT		&trans	  &kp LS(LC(LEFT))	&trans	&kp LS(LC(RIGHT))	&trans
-				&kp LC(BACKSPACE)	&trans		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&reset			&trans	  &trans	 		&trans	&trans				&trans
-				                									&trans   		&kp BSPC		&kp ENTER 		&trans
+				&kp ESC				&trans    	 &kp K_BACK     	&kp K_FORWARD 	&trans		&reset	  		&kp LS(HOME) 		&trans	&kp LS(END)			&mt LC(G) LC(F)
+				&kp LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&trans		&bt BT_CLR	  	&kp LS(LC(LEFT))	&trans	&kp LS(LC(RIGHT))	&trans
+				&kp DELETE			&trans		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&trans	 			&trans	&trans				&trans
+				                									&mo BOTH   		&kp BSPC		&kp ENTER 		&mo BOTH
 			>;
 		};
 	};

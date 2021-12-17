@@ -65,17 +65,17 @@
         combo_prev_word {
             timeout-ms = <MODTIME>;
             key-positions = <15 16>;
-            bindings = <&kp LC(END) >;
+            bindings = <&kp LC(LEFT) >;
         };
     };
 
     behaviors {
         as: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "AUTO_SHIFT";
             #binding-cells = <2>;
             tapping-term-ms = <155>;
-            quick_tap_ms = <100>;
+            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -89,16 +89,16 @@
 				&as LS(Q) Q     &as LS(W) W     &as LS(F) F     &as LS(P) P    	&as LS(B) B     	&as LS(J) J     	&as LS(L) L     &as LS(U) U    &as LS(Z) Z     			&as LS(NON_US_HASH) NON_US_HASH 
 				&as LS(A) A     &as LS(R) R     &as LS(S) S     &as LS(T) T    	&as LS(G) G     	&as LS(M) M     	&as LS(N) N     &as LS(E) E    &as LS(I) I     			&as LS(O) O
 				&as LS(Y) Y     &as LS(X) X     &as LS(C) C     &as LS(D) D    	&as LS(V) V     	&as LS(K) K     	&as LS(H) H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &mt LC(G) LC(F)
-																&lt 1 SPACE  &mt LCTRL BSPC  	&as LS(FSLH) FSLH 	&lt 2 SPACE
+																&lt 1 SPACE  	&mt LCTRL BSPC  	&as LS(FSLH) FSLH 	&lt 2 SPACE
 			>;
 		};
  
 		left_layer {
 			bindings = <
-				&as LS(SQT) SQT &as LS(MINUS) MINUS     &as LS(SEMI) SEMI   &as LS(LBKT) LBKT   &kp RA(RBKT)     &kp LS(N3)			&kp GRAVE 	    &kp UP     &kp LS(MINUS)    &kp EQUAL
-				&kp LSHIFT		&kp LS(N1)     			&kp RA(Q)  			&kp LS(N6)  		&kp LS(N5)  	&trans     			&kp LEFT  		&kp DOWN   	&kp RIGHT     	&kp LS(RBKT)
-				&kp LCTRL     	&trans     				&trans     			&kp LC(B)   		&trans    		&trans     			&kp LS(N4)  	&kp RA(E)  	&kp LS(N3)  	 &kp TAB
-				                              								&lt 1 SPACE   		&kp LC(BSPC)  	&as LS(ENTER) ENTER &lt 3 K_APP
+				&as LS(SQT) SQT &as LS(MINUS) MINUS     &as LS(SEMI) SEMI   &as LS(LBKT) LBKT   &kp RA(RBKT)    &kp LS(N3)		&kp GRAVE 	    &kp UP     &kp LS(MINUS)    &kp EQUAL
+				&kp LSHIFT		&kp LS(N1)     			&kp RA(Q)  			&kp LS(N6)  		&kp LS(N5)  	&trans     		&kp LEFT  		&kp DOWN   	&kp RIGHT     	&kp LS(RBKT)
+				&kp LCTRL     	&trans     				&trans     			&kp LC(B)   		&trans    		&trans     		&kp LS(N4)  	&kp RA(E)  	&kp LS(N3)  	 &kp TAB
+				                              								&lt 1 SPACE   		&kp LC(BSPC)  	&kp LALT 		&lt 3 K_APP
 			>;
 		};
 
@@ -114,7 +114,7 @@
 
 		both_layer {
 			bindings = <
-				&kp ESC				&none    	 &kp K_BACK     	&kp K_FORWARD 	&none			&reset	  		&kp LS(HOME) 		&none	&kp LS(END)			&mt LC(G) LC(F)
+				&kp ESC				&none    	 &kp K_BACK     	&kp K_FORWARD 	&none			&none	  		&kp LS(HOME) 		&none	&kp LS(END)			&mt LC(G) LC(F)
 				&kp LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&none			&bt BT_CLR	  	&kp LS(LC(LEFT))	&none	&kp LS(LC(RIGHT))	&none
 				&kp DELETE			&none		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&none	 			&none	&none				&none
 				                									&mo 3   		&kp BSPC		&kp ENTER 		&mo 3

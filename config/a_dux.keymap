@@ -46,16 +46,6 @@
             key-positions = <16 17>;
             bindings = <&kp HOME>;
         };
-        combo_super_home {
-            timeout-ms = <MODTIME>;
-            key-positions = <7 17>;
-            bindings = <&kp LC(HOME) >;
-        };
-        combo_super_end {
-            timeout-ms = <MODTIME>;
-            key-positions = <17 27>;
-            bindings = <&kp LC(END) >;
-        };
         combo_next_word {
             timeout-ms = <MODTIME>;
             key-positions = <18 19>;
@@ -73,7 +63,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <155>;
+            tapping-term-ms = <250>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -88,8 +78,8 @@
 			bindings = <
 				&as LS(Q) Q     &as LS(W) W     &as LS(F) F     &as LS(P) P    	&as LS(B) B     	&as LS(J) J     	&as LS(L) L     &as LS(U) U    &as LS(Z) Z     			&as LS(NON_US_HASH) NON_US_HASH 
 				&as LS(A) A     &as LS(R) R     &as LS(S) S     &as LS(T) T    	&as LS(G) G     	&as LS(M) M     	&as LS(N) N     &as LS(E) E    &as LS(I) I     			&as LS(O) O
-				&as LS(Y) Y     &as LS(X) X     &as LS(C) C     &as LS(D) D    	&as LS(V) V     	&as LS(K) K     	&as LS(H) H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &mt LC(G) LC(F)
-																&lt 1 SPACE  	&mt LCTRL BSPC  	&as LS(FSLH) FSLH 	&lt 2 SPACE
+				&as LS(Y) Y     &as LS(X) X     &as LS(C) C     &as LS(D) D    	&as LS(V) V     	&as LS(K) K     	&as LS(H) H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &mt LCTRL LC(F)
+																&mt LALT BSPC  	&lt 1 SPACE 	 	&lt 2 SPACE			&as LS(FSLH) FSLH
 			>;
 		};
  
@@ -98,7 +88,7 @@
 				&as LS(SQT) SQT &as LS(MINUS) MINUS     &as LS(SEMI) SEMI   &as LS(LBKT) LBKT   &kp RA(RBKT)    &kp LS(N3)		&kp GRAVE 	    &kp UP     &kp LS(MINUS)    &kp EQUAL
 				&kp LSHIFT		&kp LS(N1)     			&kp RA(Q)  			&kp LS(N6)  		&kp LS(N5)  	&trans     		&kp LEFT  		&kp DOWN   	&kp RIGHT     	&kp LS(RBKT)
 				&kp LCTRL     	&trans     				&trans     			&kp LC(B)   		&trans    		&trans     		&kp LS(N4)  	&kp RA(E)  	&kp LS(N3)  	 &kp TAB
-				                              								&lt 1 SPACE   		&kp LC(BSPC)  	&kp LALT 		&lt 3 K_APP
+				                              								&kp LC(BSPC)  		&lt 1 SPACE		&lt 3 K_APP		&kp LALT
 			>;
 		};
 
@@ -108,16 +98,16 @@
 				&kp NON_US_BSLH   	&as LS(N2) LS(NON_US_HASH)	&kp RA(N8)    	&kp RA(N9)     			&none     		&kp KP_ASTERISK     &kp N7     &kp N8     	&kp N9     	&kp KP_MINUS
 				&kp RA(NON_US_BSLH) &kp LS(NON_US_BSLH)     	&kp LS(N8)    &kp LS(N9)     			&kp LS(N0)  	&kp KP_SLASH     	&kp N4     &kp N5     	&kp N6     	&kp KP_PLUS
 				&none     			&none     			&as RA(N7) RA(MINUS) 	&as RA(N0) LS(N7) 		&none  			&kp N0 		  		&kp N1     &kp N2 		&kp N3   	&as COMMA DOT
-				                            									&mo 3    				&kp LC(BSPC)	 &kp ENTER   &mo 2
+				                            									&kp DELETE				&mo 3			&mo 2				&kp ENTER   
 			>;
 		}; 
 
 		both_layer {
 			bindings = <
-				&kp ESC				&none    	 &kp K_BACK     	&kp K_FORWARD 	&none			&none	  		&kp LS(HOME) 		&none	&kp LS(END)			&mt LC(G) LC(F)
-				&kp LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&none			&bt BT_CLR	  	&kp LS(LC(LEFT))	&none	&kp LS(LC(RIGHT))	&none
-				&kp DELETE			&none		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&none	 			&none	&none				&none
-				                									&mo 3   		&kp BSPC		&kp ENTER 		&mo 3
+				&kp ESC				&none    	 &kp K_BACK     	&kp K_FORWARD 	&none			&none	  		&kp LS(HOME) 		&kp LC(HOME)	&kp LS(END)			&mt LC(G) LC(F)
+				&kp LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&none			&bt BT_CLR	  	&kp LS(LC(LEFT))	&kp LC(END)		&kp LS(LC(RIGHT))	&none
+				&kp DELETE			&none		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&none	 			&none			&none				&none
+				                									&kp BSPC		&mo 3   		&mo 3 			&kp ENTER
 			>;
 		};
 	};

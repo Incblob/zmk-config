@@ -11,8 +11,6 @@
 #define DEFAULT 0
 #define MODTIME 25
 
-#define AS(keycode) &as LS(keycode) keycode
-
 &mt {
     tapping-term-ms = <200>;
     quick_tap_ms = <150>;
@@ -71,6 +69,15 @@
                 hold-trigger-key-positions = <>;
 
             };
+ 		md: mod {
+                compatible = "zmk,behavior-hold-tap";
+                label = "MOD";
+                #binding-cells = <2>;
+                tapping_term_ms = <0>;
+                flavor = "hold-preferred";
+                bindings = <&kp>, <&kp>;
+                retro-tap;
+            };
     };
 
 	keymap {
@@ -78,9 +85,9 @@
 
 		base_layer {
 			bindings = <
-				AS(Q)     		AS(W)     AS(F)     AS(P)    	AS(B)     	AS(J)     	AS(L)     AS(U)    				AS(Z)     			&mt LS(NON_US_HASH) NON_US_HASH 
-				AS(A)     		AS(R)     AS(S)     AS(T)    	AS(G)     	AS(M)     	AS(N)     AS(E)    				AS(I)     			AS(O)
-				AS(Y)    		AS(X)     AS(C)     AS(D)    	AS(V)     	AS(K)     	AS(H)     &mt LS(COMMA) COMMA   &mt LS(DOT) DOT    &mt LCTRL LC(F)
+				&kp Q     		&kp W     &kp F     &kp P    	&kp B     	&kp J     	&kp L     &kp U    				&kp Z     			&mt LS(NON_US_HASH) NON_US_HASH 
+				&kp A     		&kp R     &kp S     &kp T    	&kp G     	&kp M     	&kp N     &kp E    				&kp I     			&kp O
+				&md LSHIFT Y    &kp X     &kp C     &kp D    	&kp V     	&kp K     	&kp H     &mt LS(COMMA) COMMA   &mt LS(DOT) DOT    &mt LCTRL LC(F)
 									&mt LALT BSPC  	&lt 1 SPACE 	 	&lt 2 SPACE			&as LS(FSLH) FSLH
 			>;
 		};

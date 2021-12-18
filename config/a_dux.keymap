@@ -85,10 +85,10 @@
 
 		base_layer {
 			bindings = <
-				&kp Q     		&kp W     &kp F     &kp P    	&kp B     	&kp J     	&kp L     &kp U    				&kp Z     			&mt LS(NON_US_HASH) NON_US_HASH 
-				&kp A     		&kp R     &kp S     &kp T    	&kp G     	&kp M     	&kp N     &kp E    				&kp I     			&kp O
-				&md LSHIFT Y    &kp X     &kp C     &kp D    	&kp V     	&kp K     	&kp H     &mt LS(COMMA) COMMA   &mt LS(DOT) DOT    &mt LCTRL LC(F)
-									&mt LALT BSPC  	&lt 1 SPACE 	 	&lt 2 SPACE			&as LS(FSLH) FSLH
+				&kp Q   &kp W     &kp F     &kp P    	&kp B     	&kp J     	&kp L     &kp U    				&kp Z     			&mt LS(NON_US_HASH) NON_US_HASH 
+				&kp A   &kp R     &kp S     &kp T    	&kp G     	&kp M     	&kp N     &kp E    				&kp I     			&kp O
+				&kp Y  	&kp X     &kp C     &kp D    	&kp V     	&kp K     	&kp H     &mt LS(COMMA) COMMA   &mt LS(DOT) DOT    &mt LCTRL LC(F)
+									&mt LSHIFT BSPC  	&lt 1 SPACE 	 	&lt 2 SPACE			&as LS(FSLH) FSLH
 			>;
 		};
  

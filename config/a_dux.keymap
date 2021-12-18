@@ -16,6 +16,7 @@
 &mt {
     tapping-term-ms = <150>;
     quick_tap_ms = <150>;
+    retro-tap;
 };
 
 / {
@@ -63,7 +64,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <160>;
+            tapping-term-ms = <190>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -76,10 +77,10 @@
 
 		base_layer {
 			bindings = <
-				&as LS(Q) Q     &as LS(W) W     &as LS(F) F     &as LS(P) P    	&as LS(B) B     	&as LS(J) J     	&as LS(L) L     &as LS(U) U    &as LS(Z) Z     			&as LS(NON_US_HASH) NON_US_HASH 
-				&as LS(A) A     &as LS(R) R     &as LS(S) S     &as LS(T) T    	&as LS(G) G     	&as LS(M) M     	&as LS(N) N     &as LS(E) E    &as LS(I) I     			&as LS(O) O
-				&as LS(Y) Y     &as LS(X) X     &as LS(C) C     &as LS(D) D    	&as LS(V) V     	&as LS(K) K     	&as LS(H) H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &mt LCTRL LC(F)
-																&mt LALT BSPC  	&lt 1 SPACE 	 	&lt 2 SPACE			&as LS(FSLH) FSLH
+				&kp Q     		&kp W     &kp F     &kp P    	&kp B     	&kp J     	&kp L     &kp U    				&kp Z     			&as LS(NON_US_HASH) NON_US_HASH 
+				&mt LSHIFT A     &kp R     &kp S     &kp T    	&kp G     	&kp M     	&kp N     &kp E    				&kp I     			&mt LSHIFT O
+				&kp Y     		&kp X     &kp C     &kp D    	&kp V     	&kp K     	&kp H     &as LS(COMMA) COMMA   &as LS(DOT) DOT    &mt LCTRL LC(F)
+									&mt LALT BSPC  	&lt 1 SPACE 	 	&lt 2 SPACE			&as LS(FSLH) FSLH
 			>;
 		};
  

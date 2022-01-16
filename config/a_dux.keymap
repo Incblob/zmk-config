@@ -26,12 +26,12 @@
         };
 		combo_tab {
             timeout-ms = <MODTIME>;
-            key-positions = <11 12>;
+            key-positions = <1 2>;
             bindings = <&mt LS(TAB) TAB>;
         };
       	combo_ctl_bsp {
             timeout-ms = <MODTIME>;
-            key-positions = <26 27>;
+            key-positions = <11 12>;
             bindings = <&kp LC(BSPC) >;
         };
         combo_end {
@@ -46,7 +46,7 @@
         };
         combo_next_word {
             timeout-ms = <MODTIME>;
-            key-positions = <18 19>;
+            key-positions = <9 18>;
             bindings = <&kp LC(RIGHT) >;
         };
         combo_prev_word {
@@ -61,7 +61,7 @@
                 compatible = "zmk,behavior-hold-tap";
                 label = "AUTO_SHIFT";
                 #binding-cells = <2>;
-                tapping_term_ms = <200>;
+                tapping_term_ms = <170>;
                 quick_tap_ms = <0>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;

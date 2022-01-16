@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define MODTIME 25
+#define MODTIME 23
 
 &mt {
     tapping-term-ms = <200>;
@@ -104,9 +104,9 @@
 		both_layer {
 			bindings = <
 
-				&kp ESC				&none    	 &kp K_BACK     	&kp K_FORWARD 	&none			&none	  		&kp LS(HOME) 		&kp LC(HOME)	&kp LS(END)			&mt LC(G) LC(F)
-				&kp LS(LA(TAB))		&kp LA(TAB)  &kp LC(Y)     		&kp LC(Z)  	 	&none			&bt BT_CLR	  	&kp LS(LC(LEFT))	&kp LC(END)		&kp LS(LC(RIGHT))	&none
-				&kp DELETE			&none		 &kp LS(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&none	 			&none			&none				&none
+				&kp ESC				&none    	&kp K_BACK     		&kp K_FORWARD 	&none			&none	  		&kp LS(HOME) 		&kp LC(HOME)	&kp LS(END)			&mt LC(G) LC(F)
+				&non				&none  		&kp LC(Y)     		&kp LC(Z)  	 	&none			&bt BT_CLR	  	&kp LS(LC(LEFT))	&kp LC(END)		&kp LS(LC(RIGHT))	&none
+				&kp DELETE			&none		&kp LS(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&bt BT_SEL 0	 	&bt BT_SEL 1	&bt BT_SEL 2		&bt BT_SEL 3
 				                									&mo 3 			&kp BSPC		&kp ENTER 		&mo 3 
 
 			>;

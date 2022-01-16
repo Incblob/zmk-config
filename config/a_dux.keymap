@@ -104,7 +104,7 @@
 			bindings = <
 				&kp ESC				&none    	&kp K_BACK     		&kp K_FORWARD 	&none			&none	  		&kp LS(HOME) 		&kp LC(HOME)	&kp LS(END)			&mt LC(G) LC(F)
 				&none				&none   	&kp LC(Y)     		&kp LC(Z)  	 	&none			&bt BT_CLR	  	&kp LS(LC(LEFT))	&kp LC(END)		&kp LS(LC(RIGHT))	&none
-				&kp LWIN			&none		&kp L(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&bt BT_SEL 0 		&bt BT_SEL 1	&bt BT_SEL 2		&bt BT_SEL 3
+				&kp LWIN			&none		&kp L(LC(TAB))  	&kp LC(TAB)	 	&kp LC(LS(V))	&bt BT_NXT	  	&none 		&none	&none		&none
 				                									&mo 3 			&none			&none 			&mo 3 
 			>;
 		};

@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define MODTIME 22
+#define MODTIME 25
 
 &mt {
     tapping-term-ms = <200>;
@@ -89,7 +89,8 @@
 				&kp LCTRL     	&kp LC(I)     			&trans     			&kp LC(B)   		&trans    		&trans     		&kp LS(N4)  	&kp RA(E)  	&kp LS(N3)  	 &kp TAB
 				                              								&lt 1 SPACE		&kp LC(BSPC)		&kp LALT	&lt 3 K_APP
 			>;
-		};		
+		};
+
 
 		right_layer {
 			bindings = <
